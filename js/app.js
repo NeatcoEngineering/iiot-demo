@@ -31,18 +31,10 @@ function updateCounts() {
             borderWidth: 1,
         }],
     };
-    })
-    .catch(error => console.error('Error fetching data:', error));
     
-}
-
-// Update counts every 5 seconds
-setInterval(updateCounts, 5000); // 5000 milliseconds = 5 seconds
-    
-
     const config = {
         type: 'bar',
-        data: data,
+        data: counts,
         options: {
             scales: {
                 y: {
@@ -54,6 +46,16 @@ setInterval(updateCounts, 5000); // 5000 milliseconds = 5 seconds
 
     const myChart = new Chart(ctx, config);
 });
+    })
+        
+    .catch(error => console.error('Error fetching data:', error));
+    
+}
+
+// Update counts every 5 seconds
+setInterval(updateCounts, 5000); // 5000 milliseconds = 5 seconds
+    
+
 window.addEventListener('beforeunload', function () {
     localStorage.removeItem('token');
 })
