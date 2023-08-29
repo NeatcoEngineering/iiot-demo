@@ -49,7 +49,7 @@ function updateCounts() {
         myChart.update(); // Update the chart
 
     });
-})
+}
         
     .catch(error => console.error('Error fetching data:', error));
     
