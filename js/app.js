@@ -1,6 +1,5 @@
 const token = localStorage.getItem('token')
 document.addEventListener('DOMContentLoaded', function () {
-
     const ctx = document.getElementById('barChart').getContext('2d');
     const data = {
         labels: ['Part Count', 'Part Count Goal'],
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .then(data => {
                 // Update the <p> tags with the new counts
                 document.getElementById('partCount').textContent = data.partCount;
-                document.getElementById('partGoal').textContent = data.partGoal;
+                document.getElementById('partCountGoal').textContent = data.partGoal;
                 myChart.data.datasets[0].data = [data.partCount, data.partGoal];
                 myChart.update(); // Update the chart
 
@@ -53,10 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update counts every 5 seconds
     setInterval(updateCounts, 5000); // 5000 milliseconds = 5 seconds    
 });
-
-
-
-
 
 window.addEventListener('beforeunload', function () {
     localStorage.removeItem('token');
