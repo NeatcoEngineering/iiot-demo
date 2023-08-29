@@ -2,21 +2,29 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
- }
- 
- .banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.banner {
     background-color: #333;
     color: #fff;
     text-align: center;
     padding: 10px;
- }
- 
- .container {
+    width: 100%; /* Set the banner width to 100% */
+}
+
+.container {
     text-align: center;
     background-color: #f0f0f0; /* Example background color */
     padding: 20px;
-    border-radius: 10px; /* Example border radius */
- }
+    border-radius: 5px; /* Example border radius */
+    max-width: 600px; /* Set the max-width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+}
  
  .chart-container {
     /* Add any specific styling for the chart container here */
