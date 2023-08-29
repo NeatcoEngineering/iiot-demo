@@ -48,11 +48,8 @@ function updateCounts() {
         myChart.data.datasets[0].data = [data.partCount, data.partGoal];
         myChart.update(); // Update the chart
 
-    });
-}
-        
-    .catch(error => console.error('Error fetching data:', error));
-    
+    })
+    .catch(error => console.error('Error fetching data:', error)); 
 }
 
 // Update counts every 5 seconds
