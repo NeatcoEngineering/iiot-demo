@@ -1,7 +1,6 @@
+const token = localStorage.getItem('token')
 document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('barChart').getContext('2d');
-const token = localStorage.getItem('token')
-
 function updateCounts() {
     // Make a GET request to your API
     fetch('https://iiot-demo-robot-stacy.onrender.com/api/data',
