@@ -1,11 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('barChart').getContext('2d');
+const token = localStorage.getItem('token')
 
-    const data = {
+function updateCounts() {
+    // Make a GET request to your API
+    fetch('https://iiot-demo-robot-stacy.onrender.com/api/data',
+    {
+        headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Update the <p> tags with the new counts
+        document.getElementById('partCount').textContent = data.partCount;
+        document.getElementById('partGoal').textContent = data.partGoal;
+        const counts = {
         labels: ['Part Count', 'Part Count Goal'],
         datasets: [{
             label: 'Counts',
-            data: [100, 150], // Replace with your actual data
+            data: [data.partCount, data.partGoal], // Replace with your actual data
             backgroundColor: [
                 'rgba(75, 192, 192, 0.2)',
                 'rgba(255, 99, 132, 0.2)',
@@ -17,6 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
             borderWidth: 1,
         }],
     };
+    })
+    .catch(error => console.error('Error fetching data:', error));
+    
+}
+
+// Update counts every 5 seconds
+setInterval(updateCounts, 5000); // 5000 milliseconds = 5 seconds
+    
 
     const config = {
         type: 'bar',
