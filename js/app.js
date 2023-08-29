@@ -32,3 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const myChart = new Chart(ctx, config);
 });
+window.addEventListener('beforeunload', function () {
+    localStorage.removeItem('token');
+})
