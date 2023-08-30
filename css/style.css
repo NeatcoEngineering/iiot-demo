@@ -21,15 +21,15 @@ body {
     background-color: #f0f0f0;
     padding: 20px;
     border-radius: 5px;
-    margin-top: 50px; /* Center the container horizontally, add top margin */
+    margin-top: 30px; /* Center the container horizontally, add top margin */
     margin-bottom: 20px;
 }
  .chart-container {
     /* Add any specific styling for the chart container here */
     text-align: center;
-    width: 700px; /* Match the width of the canvas */
-    height: 500px; /* Match the height of the canvas */
-    margin: 50px; /* Center the chart horizontally */
+    width: 600px; /* Match the width of the canvas */
+    height: 400px; /* Match the height of the canvas */
+    margin: 30px; /* Center the chart horizontally */
  }
  
  .kpi {
