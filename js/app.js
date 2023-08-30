@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const myChart = new Chart(ctx, config);
     function updateCounts() {
         // Make a GET request to your API
-        fetch('https://iiot-demo-robot-stacy.onrender.com/api/data',
+        fetch('https://iiot-demo-robot-stacy.onrender.com/api/kpi',
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
